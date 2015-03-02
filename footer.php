@@ -8,18 +8,18 @@
  */
 ?>
 
-	</div><!-- #content -->
+    	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'gently' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'gently' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( __( 'Theme: %1$s by %2$s.', 'gently' ), 'Gently', '<a href="http://gently.io" rel="designer">Gently</a>' ); ?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
-</div><!-- #page -->
+    	<footer id="colophon" class="site-footer" role="contentinfo">
+    		<div class="site-info">
+    			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'gently' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'gently' ), 'WordPress' ); ?></a>
+    			<span class="sep"> | </span>
+    			<?php printf( __( 'Theme: %1$s by %2$s.', 'gently' ), 'Gently', '<a href="http://gently.io" rel="designer">Gently</a>' ); ?>
+    		</div><!-- .site-info -->
+    	</footer><!-- #colophon -->
+    </div><!-- #page -->
 
-<?php wp_footer(); ?>
+    <?php wp_footer(); ?>
 
-</body>
+    </body>
 </html>
