@@ -8,11 +8,22 @@
  */
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
-<head>
-<meta charset="<?php bloginfo( 'charset' ); ?>">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="profile" href="http://gmpg.org/xfn/11">
-<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+	<head>
+		<meta charset="<?php bloginfo( 'charset' ); ?>">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="profile" href="http://gmpg.org/xfn/11">
+		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+
+	    <link rel="stylesheet" href="css/reset.css">
+	    <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Varela+Round'>
+	    <link rel='stylesheet prefetch' href='css/font-awesome.min.css'>
+
+	    <link type='text/css' rel="icon" type="image/png" href="img/favicon.png" />
+	    <link type="image/x-icon" rel="shortcut icon" href="img/favicon.ico">
+	    <link type="image/x-icon" rel="icon" href="img/favicon.ico">
+	    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+	    <link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png">
+	    <link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png">
 
 <?php wp_head(); ?>
 </head>
