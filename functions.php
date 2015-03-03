@@ -76,6 +76,8 @@ function gently_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'gently_scripts' );
 
+add_theme_support( 'post-thumbnails' );
+
 /**
  * Implement the Custom Header feature.
  */
