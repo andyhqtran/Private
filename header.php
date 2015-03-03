@@ -28,7 +28,7 @@
 		      <div class='col-md-12'>
 		        <div class='navbar clearfix'>
 		          <h2 class='logo'>
-		            <a href='#'>gently</a>
+		            <a href='<?php echo esc_url( home_url( '/' ) ); ?>'><?php bloginfo( 'name' ); ?></a>
 		          </h2>
 		          <nav class='nav'>
 		            <ul>
