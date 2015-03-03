@@ -7,17 +7,6 @@
  * @package Gently
  */
 ?>
-
-        	</div><!-- #content -->
-
-        	<footer id="colophon" class="site-footer" role="contentinfo">
-        		<div class="site-info">
-        			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'gently' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'gently' ), 'WordPress' ); ?></a>
-        			<span class="sep"> | </span>
-        			<?php printf( __( 'Theme: %1$s by %2$s.', 'gently' ), 'Gently', '<a href="http://gently.io" rel="designer">Gently</a>' ); ?>
-        		</div><!-- .site-info -->
-        	</footer><!-- #colophon -->
-        </div><!-- #page -->
         <footer class='footer'>
             <div class='container'>
                 <div class='row'>
@@ -38,6 +27,7 @@
               <div class='row'>
                 <div class='col-md-12'>
                   <p class='copyright'>
+                    <?php printf( __( 'Proudly powered by %s', 'gently' ), '<b>WordPress</b>' ); ?> |
                     Copyright &copy; 2015 <b>Gently.io</b>. All Rights Reserved.
                   </p>
                 </div>

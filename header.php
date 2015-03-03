@@ -31,28 +31,13 @@
 		            <a href='<?php echo esc_url( home_url( '/' ) ); ?>'><?php bloginfo( 'name' ); ?></a>
 		          </h2>
 		          <nav class='nav'>
-		            <ul>
-		              <li>
-		                <a class='active' href='#'>Home</a>
-		              </li>
-		              <li>
-		                <a href='#'>Team</a>
-		              </li>
-		              <li>
-		                <a href='#'>Blog</a>
-		              </li>
-		              <li>
-		                <a href='#'>Freebies</a>
-		              </li>
-		              <li>
-		                <a class='nav-btn' href='#'>Let's Talk</a>
-		              </li>
-		            </ul>
+		          	<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 		          </nav>
 		        </div>
 		      </div>
 		    </div>
 		  </header>
+		  <?php if( is_home() || is_front_page() ) : ?>
 		  <div class='hero-text' data-sr='scale up 30%'>
 		    <div class='container'>
 		      <div class='row'>
@@ -69,20 +54,5 @@
 		      </div>
 		    </div>
 		  </div>
+<?php endif; ?>
 		</div>
-<div id="page" class="hfeed site">
-	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'gently' ); ?></a>
-
-	<header id="masthead" class="site-header" role="banner">
-		<div class="site-branding">
-			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-		</div><!-- .site-branding -->
-
-		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<button class="menu-toggle" aria-controls="menu" aria-expanded="false"><?php _e( 'Primary Menu', 'gently' ); ?></button>
-			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
-
-	<div id="content" class="site-content">
