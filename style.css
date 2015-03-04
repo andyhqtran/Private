@@ -283,6 +283,7 @@ a:hover {
   margin: 0;
   padding: 10px 0;
   line-height: 1;
+  text-transform: lowercase;
   font-size: 30px;
   float: left;
 }
@@ -489,7 +490,9 @@ a:hover {
   box-size: border-box;
 }
 .mp-container .mp-featured .featured-project .featured-project-thumbnail .macbook .macbook-screen {
-  background: #000;
+  display: block;
+  width: 456px;
+  height: 286px;
 }
 .mp-container .mp-featured .featured-project .featured-project-thumbnail .browser {
   background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-97/4.png');
@@ -509,6 +512,11 @@ a:hover {
   width: 601px;
   height: 4px;
   margin: -4px 0 0 -57px;
+}
+.mp-container .mp-featured .featured-project .featured-project-thumbnail .browser .browser-window {
+  display: block;
+  width: 485px;
+  height: 281px;
 }
 .footer {
   background: #464d57;
@@ -568,5 +576,49 @@ a:hover {
   }
   to {
     -webkit-transform: translate(0, 0px);
+  }
+}
+@media (max-width: 991px) {
+  .hero .header .navbar .nav .mobile-button {
+    outline: none;
+    background: 0;
+    width: 30px;
+    border: 0;
+    padding: 14px 0;
+  }
+  .hero .header .navbar .nav .mobile-button span {
+    display: block;
+    background: #ffffff;
+    height: 3px;
+    margin-bottom: 7px;
+  }
+  .hero .header .navbar .nav .mobile-button span:last-child {
+    margin: 0;
+  }
+  .hero .header .navbar .nav ul {
+    display: none;
+  }
+  .mp-container .mp-page-header {
+    padding: 120px 0;
+  }
+  .mp-container .mp-page-header:before,
+  .mp-container .mp-page-header:after,
+  .mp-container .mp-featured .featured-project:after {
+    display: none;
+  }
+  .mp-container .mp-featured .featured-project {
+    text-align: center;
+    margin-bottom: 120px;
+  }
+  .mp-container .mp-featured .featured-project:before,
+  .mp-container .mp-featured .featured-project:after {
+    display: none;
+  }
+  .mp-container .mp-featured .featured-project .featured-project-thumbnail {
+    margin-bottom: 60px;
+  }
+  .mp-container .mp-featured .featured-project .featured-project-thumbnail .macbook,
+  .mp-container .mp-featured .featured-project .featured-project-thumbnail .browser {
+    margin: 0 auto;
   }
 }
