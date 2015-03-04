@@ -19,13 +19,7 @@ get_header(); ?>
   <div class='mp-featured'>
     <div class='featured-project'>
       <div class='row'>
-        <div class='col-md-5' data-sr='enter left ease 90px'>
-          <h3 class='project-title'>Gently Branding</h3>
-          <div class='project-meta'>Branding and UI Design</div>
-          <p class='project-description'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.</p>
-          <a class='btn btn-danger'>View Project</a>
-        </div>
-        <div class='col-md-7' data-sr='enter right ease 90px'>
+        <div class='col-md-7 col-md-push-5' data-sr='enter right ease 90px'>
           <div class='featured-project-thumbnail'>
             <div class='macbook'>
               <div class='macbook-screen'>
@@ -33,6 +27,12 @@ get_header(); ?>
               </div>
             </div>
           </div>
+        </div>
+        <div class='col-md-5 col-md-pull-7' data-sr='enter left ease 90px'>
+          <h3 class='project-title'>Gently Branding</h3>
+          <div class='project-meta'>Branding and UI Design</div>
+          <p class='project-description'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.</p>
+          <a class='btn btn-danger'>View Project</a>
         </div>
       </div>
     </div>
@@ -57,13 +57,7 @@ get_header(); ?>
     </div>
     <div class='featured-project'>
       <div class='row'>
-        <div class='col-md-5' data-sr='enter left ease 90px'>
-          <h3 class='project-title'>Blink.</h3>
-          <div class='project-meta'>WordPress Theme and Website Design</div>
-          <p class='project-description'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.</p>
-          <a class='btn btn-danger'>View Project</a>
-        </div>
-        <div class='col-md-7' data-sr='enter right ease 90px'>
+        <div class='col-md-7 col-md-push-5' data-sr='enter right ease 90px'>
           <div class='featured-project-thumbnail'>
             <div class='macbook'>
               <div class='macbook-screen'>
@@ -71,6 +65,12 @@ get_header(); ?>
               </div>
             </div>
           </div>
+        </div>
+        <div class='col-md-5 col-md-pull-7' data-sr='enter left ease 90px'>
+          <h3 class='project-title'>Blink.</h3>
+          <div class='project-meta'>WordPress Theme and Website Design</div>
+          <p class='project-description'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.</p>
+          <a class='btn btn-danger'>View Project</a>
         </div>
       </div>
     </div>
