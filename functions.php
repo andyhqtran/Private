@@ -78,6 +78,7 @@ add_action( 'wp_enqueue_scripts', 'gently_scripts' );
 
 add_theme_support( 'post-thumbnails' );
 
+require get_template_directory() . '/inc/cpanel.php';
 /**
  * Implement the Custom Header feature.
  */

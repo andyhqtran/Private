@@ -42,7 +42,7 @@
 		    	<div class='container'>
 		      		<div class='row'>
 		        		<div class='col-md-12'>
-		          			<h2>Two heads are better than one.</h2>
+		          			<h2>Three heads are better than one.</h2>
 		          			<p>We need to think of a sick tagline right here, because I can’t think of shit right now</p>
 		          			<div class='btn-group' data-sr='enter bottom wait .3s ease 60px'>
 		            			<a class='btn btn-hero' href='#featured'>
