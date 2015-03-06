@@ -24,17 +24,17 @@
                 </div>
             </div>
           <div class='footer-bottom'>
-            <div class='container'>
-              <div class='row'>
-                <div class='col-md-12'>
-                  <p class='copyright'>
-                    <?php printf( __( 'Proudly powered by %s', 'gently' ), '<b>WordPress</b>' ); ?> |
-                    Copyright &copy; 2015 <b>Gently.io</b>. All Rights Reserved.
-                  </p>
+                <div class='container'>
+                    <div class='row'>
+                        <div class='col-md-12'>
+                            <p class='copyright'>
+                                <?php printf( __( 'Proudly powered by %s', 'gently' ), '<b>WordPress</b>' ); ?> |
+                                Copyright &copy; 2015 <b>Gently.io</b>. All Rights Reserved.
+                            </p>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
         </footer>
 
         <?php wp_footer(); ?>
