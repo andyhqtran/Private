@@ -35,13 +35,8 @@
             </div>
           </div>
         </footer>
-        <?php wp_footer(); ?>
-        <script src='<?php bloginfo('template_directory'); ?>/js/jquery-2.1.3.min.js'></script>
-        <script src='<?php bloginfo('template_directory'); ?>/js/bootstrap.min.js'></script>
-        <script src='<?php bloginfo('template_directory'); ?>/js/scrollReveal.min.js'></script>
-        <script src="<?php bloginfo('template_directory'); ?>/js/script.js"></script>
 
-        <script src="//use.typekit.net/xyl8bgh.js"></script>
-        <script>try{Typekit.load();}catch(e){}</script>
+        <?php wp_footer(); ?>
+
     </body>
 </html>
