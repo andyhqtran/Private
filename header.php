@@ -42,3 +42,9 @@
 		  	</div>
 			<?php endif; ?>
 		</div>
+		<?php
+		if ( is_page_template( 'page-template-home.php' ) ) : ?>
+			<div class='container mp-container' id='featured'>
+		<?php else : ?>
+			<div class='container'>
+		<?php endif; ?>

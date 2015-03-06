@@ -4,7 +4,6 @@ Template Name: Home Page
 */
 
 get_header(); ?>
-<div class='container mp-container' id='featured'>
   <div class='row'>
     <div class='col-md-12'>
       <div class='mp-page-header'>
@@ -75,5 +74,4 @@ get_header(); ?>
       </div>
     </div>
   </div>
-</div>
 <?php get_footer(); ?>
