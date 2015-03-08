@@ -271,6 +271,7 @@ a:hover {
   background: #48d2bd url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-97/1.png') center bottom no-repeat;
 }
 .hero .header {
+  background: #ffffff;
   padding: 36px 0;
 }
 .hero .header .navbar {
@@ -288,12 +289,15 @@ a:hover {
   float: left;
 }
 .hero .header .navbar .logo a {
-  color: #ffffff;
+  color: #48d2bd;
   text-decoration: none;
 }
 .hero .header .navbar .nav {
   display: inline-block;
   float: right;
+}
+.hero .header .navbar .nav .mobile-button {
+  display: none;
 }
 .hero .header .navbar .nav ul {
   list-style: none;
@@ -312,14 +316,22 @@ a:hover {
   margin: 0;
 }
 .hero .header .navbar .nav ul li.current_page_item a {
-  color: #ffffff;
+  color: #48d2bd;
+  padding-bottom: 5px;
   border-bottom: 2px solid #cbff8d;
 }
 .hero .header .navbar .nav ul li.nav-btn a {
+  background: #48d2bd;
   margin: 0;
+  color: #ffffff;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
+}
+.hero .header .navbar .nav ul li.nav-btn a:hover,
+.hero .header .navbar .nav ul li.nav-btn a:focus {
+  background: #71dccc;
+  color: #ffffff;
 }
 .hero .header .navbar .nav ul li.nav-btn a:active,
 .hero .header .navbar .nav ul li.nav-btn a.active {
@@ -329,7 +341,7 @@ a:hover {
   margin: 0;
 }
 .hero .header .navbar .nav ul li a {
-  color: #b9f2e9;
+  color: #999999;
   text-decoration: none;
   -webkit-transition: all 0.3s linear 0s;
   -moz-transition: all 0.3s linear 0s;
@@ -338,26 +350,59 @@ a:hover {
   transition: all 0.3s linear 0s;
 }
 .hero .header .navbar .nav ul li a:hover {
+  color: #48d2bd;
+}
+.home .hero .header {
+  background: 0;
+}
+.home .hero .header .navbar .logo a {
+  color: #ffffff;
+}
+.home .hero .header .navbar .nav ul li.nav-btn a {
+  background: #ffffff;
+  color: #48d2bd;
+}
+.home .hero .header .navbar .nav ul li.nav-btn a:hover,
+.home .hero .header .navbar .nav ul li.nav-btn a:focus,
+.home .hero .header .navbar .nav ul li.nav-btn a:active,
+.home .hero .header .navbar .nav ul li.nav-btn a.active {
+  color: #48d2bd;
+}
+.home .hero .header .navbar .nav ul li.current_page_item a {
+  color: #ffffff;
+}
+.home .hero .header .navbar .nav ul li a {
+  color: #b9f2e9;
+}
+.home .hero .header .navbar .nav ul li a:hover {
   color: #ffffff;
 }
 .hero .hero-text,
+.hero .page-header,
 .footer .footer-text {
   padding: 95px 0;
   text-align: center;
 }
+.hero .hero-text h1,
 .hero .hero-text h2,
+.hero .page-header h1,
+.hero .page-header h2,
+.footer .footer-text h1,
 .footer .footer-text h2 {
   margin: 0 0 30px;
   color: #ffffff;
+  font-size: 36px;
   line-height: 1;
 }
 .hero .hero-text p,
+.hero .page-header p,
 .footer .footer-text p {
   margin: 0 0 50px;
   color: #d6f2e4;
   font-size: 20px;
 }
 .hero .hero-text .btn-group,
+.hero .page-header .btn-group,
 .footer .footer-text .btn-group {
   margin: 0 0 200px;
   font-size: 15px;
@@ -365,10 +410,12 @@ a:hover {
   color: #ffffff;
 }
 .hero .hero-text .btn-group span,
+.hero .page-header .btn-group span,
 .footer .footer-text .btn-group span {
   vertical-align: middle;
 }
 .hero .hero-text .btn-group .btn,
+.hero .page-header .btn-group .btn,
 .footer .footer-text .btn-group .btn {
   display: inline-block;
   outline: none;
@@ -393,10 +440,18 @@ a:hover {
   animation: float 3s infinite ease-in-out;
 }
 .hero .hero-text .btn-group .btn:first-child,
+.hero .page-header .btn-group .btn:first-child,
 .footer .footer-text .btn-group .btn:first-child {
   -webkit-border-radius: 100%;
   -moz-border-radius: 100%;
   border-radius: 100%;
+}
+.hero .page-header {
+  margin: 0;
+  border: none;
+}
+.hero .page-header p {
+  margin: 0;
 }
 .mp-container .mp-page-header {
   text-align: center;

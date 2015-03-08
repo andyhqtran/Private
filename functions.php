@@ -82,6 +82,120 @@ add_action( 'wp_enqueue_scripts', 'gently_scripts' );
 
 add_theme_support( 'post-thumbnails' );
 
+function gently_add_to_author_contact( $contactmethods ) {
+
+    $contactmethods['rss_url'] = 'RSS URL';
+    $contactmethods['google_profile'] = 'Google Profile URL';
+    $contactmethods['twitter_profile'] = 'Twitter Profile URL';
+    $contactmethods['facebook_profile'] = 'Facebook Profile URL';
+    $contactmethods['linkedin_profile'] = 'Linkedin Profile URL';
+    $contactmethods['dribbble_profile'] = 'Dribbble Profile URL';
+    $contactmethods['behance_profile'] = 'Behance Profile URL';
+    $contactmethods['codepen_profile'] = 'CodePen Profile URL';
+    $contactmethods['github_profile'] = 'GitHub Profile URL';
+
+    return $contactmethods;
+}
+add_filter( 'user_contactmethods', 'gently_add_to_author_contact', 10, 1);
+
+add_action( 'init', 'gently_portfolio_register' );
+
+function gently_portfolio_register() {
+    $labels = array(
+        'name'               => _x( 'Projects', 'post type general name', 'your-plugin-textdomain' ),
+        'singular_name'      => _x( 'Project', 'post type singular name', 'your-plugin-textdomain' ),
+        'menu_name'          => _x( 'Projects', 'admin menu', 'your-plugin-textdomain' ),
+        'name_admin_bar'     => _x( 'Project', 'add new on admin bar', 'your-plugin-textdomain' ),
+        'add_new'            => _x( 'Add New', 'project', 'your-plugin-textdomain' ),
+        'add_new_item'       => __( 'Add New Project', 'your-plugin-textdomain' ),
+        'new_item'           => __( 'New Project', 'your-plugin-textdomain' ),
+        'edit_item'          => __( 'Edit Project', 'your-plugin-textdomain' ),
+        'view_item'          => __( 'View Project', 'your-plugin-textdomain' ),
+        'all_items'          => __( 'All Project', 'your-plugin-textdomain' ),
+        'search_items'       => __( 'Search Projects', 'your-plugin-textdomain' ),
+        'parent_item_colon'  => __( 'Parent Projects:', 'your-plugin-textdomain' ),
+        'not_found'          => __( 'No projects found.', 'your-plugin-textdomain' ),
+        'not_found_in_trash' => __( 'No projects found in Trash.', 'your-plugin-textdomain' )
+    );
+
+    $args = array(
+        'labels'             => $labels,
+        'public'             => true,
+        'publicly_queryable' => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'query_var'          => true,
+        'rewrite'            => array( 'slug' => 'project' ),
+        'capability_type'    => 'post',
+        'has_archive'        => true,
+        'hierarchical'       => false,
+        'menu_position'      => null,
+        'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' )
+    );
+
+    register_post_type( 'project', $args );
+}
+
+add_action( 'init', 'gently_portfolio_taxomomies_register', 0 );
+
+function gently_portfolio_taxomomies_register() {
+    $labels = array(
+        'name'              => _x( 'Categories', 'taxonomy general name' ),
+        'singular_name'     => _x( 'Catogory', 'taxonomy singular name' ),
+        'search_items'      => __( 'Search Categories' ),
+        'all_items'         => __( 'All Categories' ),
+        'parent_item'       => __( 'Parent Catogory' ),
+        'parent_item_colon' => __( 'Parent Catogory:' ),
+        'edit_item'         => __( 'Edit Catogory' ),
+        'update_item'       => __( 'Update Catogory' ),
+        'add_new_item'      => __( 'Add New Catogory' ),
+        'new_item_name'     => __( 'New Catogory Name' ),
+        'menu_name'         => __( 'Catogory' ),
+    );
+
+    $args = array(
+        'hierarchical'      => true,
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+        'rewrite'           => array( 'slug' => 'genre' ),
+    );
+
+    register_taxonomy( 'genre', array( 'project' ), $args );
+
+    $labels = array(
+        'name'                       => _x( 'Tags', 'taxonomy general name' ),
+        'singular_name'              => _x( 'Tag', 'taxonomy singular name' ),
+        'search_items'               => __( 'Search Tags' ),
+        'popular_items'              => __( 'Popular Tags' ),
+        'all_items'                  => __( 'All Tags' ),
+        'parent_item'                => null,
+        'parent_item_colon'          => null,
+        'edit_item'                  => __( 'Edit Tag' ),
+        'update_item'                => __( 'Update Tag' ),
+        'add_new_item'               => __( 'Add New Tag' ),
+        'new_item_name'              => __( 'New Tag Name' ),
+        'separate_items_with_commas' => __( 'Separate tags with commas' ),
+        'add_or_remove_items'        => __( 'Add or remove tags' ),
+        'choose_from_most_used'      => __( 'Choose from the most used tags' ),
+        'not_found'                  => __( 'No tags found.' ),
+        'menu_name'                  => __( 'Tags' ),
+    );
+
+    $args = array(
+        'hierarchical'          => false,
+        'labels'                => $labels,
+        'show_ui'               => true,
+        'show_admin_column'     => true,
+        'update_count_callback' => '_update_post_term_count',
+        'query_var'             => true,
+        'rewrite'               => array( 'slug' => 'tag' ),
+    );
+
+    register_taxonomy( 'writer', 'project', $args );
+}
+
 require get_template_directory() . '/inc/cpanel.php';
 /**
  * Implement the Custom Header feature.
