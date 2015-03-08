@@ -28,8 +28,14 @@
 		      		<div class='row'>
 		        		<div class='col-md-12'>
 		        			<?php if ( is_page_template('page-template-home.php') ) : ?>
-		          			<h2>Three heads are better than one.</h2>
-		          			<p>We need to think of a sick tagline right here, because I can’t think of shit right now</p>
+		          			<h1><?php the_title(); ?></h1>
+		          			<p>
+	          				<?php
+	          					if (have_posts()) : while (have_posts()) : the_post();
+									the_content();]
+								endwhile; endif;
+							?>
+							</p>
 		          			<div class='btn-group' data-sr='enter bottom wait .3s ease 60px'>
 		            			<a class='btn btn-hero' href='#featured'>
 		              				<div class='fa fa-long-arrow-down'></div>
@@ -38,11 +44,13 @@
 		          			</div>
 		          			<?php elseif ( is_page() ) :?>
 		          			<h1><?php the_title(); ?></h1>
-		          			<p><?php if (have_posts()) : while (have_posts()) : the_post();
-
-the_content();
-
-endwhile; endif; ?></p>
+		          			<p>
+	          				<?php
+	          					if (have_posts()) : while (have_posts()) : the_post();
+									the_content();
+								endwhile; endif;
+							?>
+							</p>
 		          			<?php endif; ?>
 		        		</div>
 		      		</div>
