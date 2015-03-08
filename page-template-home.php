@@ -3,7 +3,8 @@
     Template Name: Home Page
 */
 
-get_header(); ?>
+    get_header(); ?>
+
     <div class='row'>
         <div class='col-md-12'>
             <div class='mp-page-header'>
@@ -14,62 +15,75 @@ get_header(); ?>
         </div>
     </div>
     <div class='mp-featured'>
+        <?php
+            $i=1;
+            $args = array('order' => 'asc', 'v_sortby' => 'views', 'post_type' => 'project', 'showposts' => '3');
+            $latest = new WP_Query( $args );
+
+            while( $latest->have_posts() ) : $latest->the_post();
+        ?>
         <div class='featured-project'>
-            <div class='row'>
-                <div class='col-md-7 col-md-push-5' data-sr='enter right ease 90px'>
-                     <div class='featured-project-thumbnail'>
-                        <div class='macbook'>
-                            <div class='macbook-screen'>
-                                <img class='img-responsive' src='http://placehold.it/456x286'>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class='col-md-5 col-md-pull-7' data-sr='enter left ease 90px'>
-                    <h3 class='project-title'>Gently Branding</h3>
-                    <div class='project-meta'>Branding and UI Design</div>
-                    <p class='project-description'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.</p>
-                    <a class='btn btn-danger'>View Project</a>
-                </div>
-            </div>
-        </div>
-        <div class='featured-project'>
+        <?php if(is_int($i/2)) { ?>
             <div class='row'>
                 <div class='col-md-7' data-sr='enter left ease 90px'>
-                    <div class='featured-project-thumbnail'>
+                     <div class='featured-project-thumbnail'>
                         <div class='browser'>
-                            <div class='browser-window'>
-                                <img class='img-responsive' src='http://placehold.it/485x281'>
+                            <div class='browser-screen'>
+                                <?php the_post_thumbnail( array(485, 281), array('class' => 'img-responsive') ); ?>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class='col-md-5' data-sr='enter right ease 90px'>
-                    <h3 class='project-title'>Taylor Website Template</h3>
-                    <div class='project-meta'>Website Template and Website Design</div>
-                    <p class='project-description'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.</p>
-                    <a class='btn btn-danger'>View Project</a>
+                    <h3 class='project-title'><?php the_title(); ?></h3>
+                    <div class='project-meta'>
+                        <?php the_taxonomies(array( 'template' => '<span class="label">%s</span> %l.' )); ?>
+                    </div>
+                    <div class='project-description'>
+                        <?php
+                            $content = get_the_content();
+                            if ( strlen($content) > 250 ) {
+                                echo substr($content, 0, 250)."...";
+                            } else {
+                                the_content();
+                            }
+                        ?>
+                     </div>
+                    <a class='btn btn-danger' href='<?php the_permalink(); ?>'>View Project</a>
                 </div>
             </div>
-        </div>
-        <div class='featured-project'>
+        <?php } else { ?>
             <div class='row'>
                 <div class='col-md-7 col-md-push-5' data-sr='enter right ease 90px'>
-                    <div class='featured-project-thumbnail'>
+                     <div class='featured-project-thumbnail'>
                         <div class='macbook'>
                             <div class='macbook-screen'>
-                                <img class='img-responsive' src='http://placehold.it/456x286'>
+                                <?php the_post_thumbnail( array(456, 286), array('class' => 'img-responsive') ); ?>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class='col-md-5 col-md-pull-7' data-sr='enter left ease 90px'>
-                    <h3 class='project-title'>Blink.</h3>
-                    <div class='project-meta'>WordPress Theme and Website Design</div>
-                    <p class='project-description'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.</p>
-                    <a class='btn btn-danger'>View Project</a>
+                    <h3 class='project-title'><?php the_title(); ?></h3>
+                    <div class='project-meta'>
+                        <?php the_taxonomies(array( 'template' => '<span class="label">%s</span> %l.' )); ?>
+                    </div>
+                    <div class='project-description'>
+                        <?php
+                            $content = get_the_content();
+                            if ( strlen($content) > 250 ) {
+                                echo substr($content, 0, 250)."...";
+                            } else {
+                                the_content();
+                            }
+                        ?>
+                     </div>
+                    <a class='btn btn-danger' href='<?php the_permalink(); ?>'>View Project</a>
                 </div>
             </div>
+        <?php } ?>
         </div>
+        <?php $i++;
+        endwhile; ?>
   </div>
 <?php get_footer(); ?>
