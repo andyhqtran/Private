@@ -84,6 +84,7 @@ add_theme_support( 'post-thumbnails' );
 
 function gently_add_to_author_contact( $contactmethods ) {
 
+    $contactmethods['gently_position'] = 'Position';
     $contactmethods['rss_url'] = 'RSS URL';
     $contactmethods['google_profile'] = 'Google Profile URL';
     $contactmethods['twitter_profile'] = 'Twitter Profile URL';

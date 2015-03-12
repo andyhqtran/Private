@@ -23,7 +23,7 @@
 			      	</div>
 			    </div>
 		  	</header>
-		  	<div class='<?php if ( is_page_template('page-template-home.php') ) { echo 'hero-text'; } elseif ( is_page() ) { echo 'page-header'; } ?>' data-sr='scale up 30%'>
+		  	<div class='<?php if ( is_page_template('page-template-home.php') ) { echo 'hero-text'; } elseif ( is_page() ) { echo 'page-header'; } ?>' <?php if ( is_page_template('page-template-home.php') ) { echo 'data-sr="scale up 30%"'; } ?>>
 		    	<div class='container'>
 		      		<div class='row'>
 		        		<div class='col-md-12'>
