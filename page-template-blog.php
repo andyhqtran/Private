@@ -2,14 +2,14 @@
 /*
     Template Name: Blog Page
 */
-
 get_header(); ?>
 
 <div class='row'>
     <div class='col-md-8 col-md-offset-2'>
     <?php
         $args = array(
-            'post_type' => 'post'
+            'post_type' => 'post',
+            'rewrite'            => array( 'slug' => 'blog' ),
         );
 
         $the_query = new WP_Query( $args );
@@ -23,7 +23,9 @@ if ( $the_query->have_posts() ) : ?>
       <div class='module post-module clearfix'>
         <?php if ( has_post_thumbnail() ) { ?>
             <div class='featured-image'>
-              <?php the_post_thumbnail('full'); ?>
+                <a href='<?php the_permalink(); ?>'>
+                    <?php the_post_thumbnail('full'); ?>
+                </a>
             </div>
         <?php } ?>
         <div class='post-date'>

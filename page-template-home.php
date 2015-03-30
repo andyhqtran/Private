@@ -29,7 +29,7 @@
                      <div class='featured-project-thumbnail'>
                         <div class='browser'>
                             <div class='browser-screen'>
-                                <?php the_post_thumbnail( array(485, 281), array('class' => 'img-responsive') ); ?>
+                                <?php the_post_thumbnail( 'full', array('class' => 'img-responsive') ); ?>
                             </div>
                         </div>
                     </div>
@@ -58,7 +58,7 @@
                      <div class='featured-project-thumbnail'>
                         <div class='macbook'>
                             <div class='macbook-screen'>
-                                <?php the_post_thumbnail( array(456, 286), array('class' => 'img-responsive') ); ?>
+                                <?php the_post_thumbnail( 'full' , array('class' => 'img-responsive') ); ?>
                             </div>
                         </div>
                     </div>

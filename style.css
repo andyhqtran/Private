@@ -561,6 +561,11 @@ a:hover {
   display: block;
   width: 456px;
   height: 286px;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+.mp-container .mp-featured .featured-project .featured-project-thumbnail .macbook .macbook-screen img {
+  width: 100%;
 }
 .mp-container .mp-featured .featured-project .featured-project-thumbnail .browser {
   background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-97/4.png');
@@ -585,6 +590,11 @@ a:hover {
   display: block;
   width: 485px;
   height: 281px;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+.mp-container .mp-featured .featured-project .featured-project-thumbnail .browser .browser-screen img {
+  width: 100%;
 }
 .author-profile {
   margin: 100px 0;
@@ -667,21 +677,26 @@ a:hover {
   width: 100%;
   height: auto;
 }
-.module.post-module {
+.module.post-module,
+.module.module.single-module {
   margin: 0 0 60px;
   padding: 0 0 60px;
   border-bottom: 1px solid #f3f3f3;
 }
-.module.post-module:first-child {
+.module.post-module:first-child,
+.module.module.single-module:first-child {
   margin: 60px 0;
 }
-.module.post-module:last-child {
+.module.post-module:last-child,
+.module.module.single-module:last-child {
   border-bottom: 0;
 }
-.module.post-module .featured-image {
+.module.post-module .featured-image,
+.module.module.single-module .featured-image {
   margin: 0 0 30px;
 }
-.module.post-module .post-date {
+.module.post-module .post-date,
+.module.module.single-module .post-date {
   display: inline-block;
   background: #48d2bd;
   width: 60px;
@@ -694,43 +709,54 @@ a:hover {
   text-align: center;
   float: left;
 }
-.module.post-module .post-date .month {
+.module.post-module .post-date .month,
+.module.module.single-module .post-date .month {
   margin: 4px 0 0;
   font-size: 10px;
   font-weight: 600;
   text-transform: uppercase;
 }
-.module.post-module .post-date .day {
+.module.post-module .post-date .day,
+.module.module.single-module .post-date .day {
   font-size: 30px;
 }
-.module.post-module .post-title {
+.module.post-module .post-title,
+.module.module.single-module .post-title {
   margin: 0;
   padding: 5px 0 3px;
   color: #707981;
   font-size: 30px;
   line-height: 1;
 }
-.module.post-module .post-title a {
+.module.post-module .post-title a,
+.module.module.single-module .post-title a {
   color: #707981;
   text-decoration: none;
 }
-.module.post-module .post-meta {
+.module.post-module .post-meta,
+.module.module.single-module .post-meta {
   margin: 0 0 30px;
   color: #a4acb4;
   font-size: 12px;
   font-weight: 400;
 }
-.module.post-module .post-meta a {
+.module.post-module .post-meta a,
+.module.module.single-module .post-meta a {
   color: #a4acb4;
   font-weight: 600;
 }
-.module.post-module .post-content {
+.module.post-module .post-content,
+.module.module.single-module .post-content {
   color: #a3abb3;
   font-size: 14px;
 }
-.module.post-module .btn {
+.module.post-module .btn,
+.module.module.single-module .btn {
   padding: 12px 15px;
   float: right;
+}
+.sidebar {
+  margin: 60px 0;
 }
 .footer {
   background: #464d57;

@@ -1,5 +1,13 @@
 <?php
 
+add_action( 'init', 'gently_post_change' );
+function gently_post_change() {
+    $args = array (
+      'rewrite' =>  array( 'slug' => 'blog')
+    );
+    register_post_type( 'post', $args );
+}
+
 add_action( 'init', 'gently_portfolio_register' );
 
 function gently_portfolio_register() {
