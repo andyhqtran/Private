@@ -968,3 +968,6 @@ a:hover {
     margin: 0 auto;
   }
 }
+[data-sr] {
+  visibility: hidden;
+}
