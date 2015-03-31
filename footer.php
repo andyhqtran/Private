@@ -15,7 +15,7 @@
                         <div class='footer-text' data-sr='scale up 30%'>
                             <h2>Want to work with us?</h2>
                             <p>Put some catchy tagline here now that's long enough it looks good</p>
-                            <a class='btn btn-info'>
+                            <a class='btn btn-info' href='<?php echo esc_url( home_url( '/' ) ); ?>contact/'>
                                 <i class='fa fa-comments'></i>
                                 Lets Talk
                             </a>

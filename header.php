@@ -23,7 +23,7 @@
 			      	</div>
 			    </div>
 		  	</header>
-		  	<div class='<?php if ( is_page_template('page-template-home.php') ) { echo 'hero-text'; } elseif ( is_page() ) { echo 'page-header'; } ?>' <?php if ( is_page_template('page-template-home.php') ) { echo 'data-sr="scale up 30%"'; } ?>>
+		  	<div class='<?php if ( is_page_template('page-template-home.php') ) { echo 'hero-text'; } elseif ( is_page() || is_singular() ) { echo 'page-header'; } ?>' <?php if ( is_page_template('page-template-home.php') ) { echo 'data-sr="scale up 30%"'; } ?>>
 		    	<div class='container'>
 		      		<div class='row'>
 		        		<div class='col-md-12'>
@@ -39,7 +39,12 @@
 		            			</a>
 		            			<span>See our case studies</span>
 		          			</div>
-		          			<?php elseif ( is_page() ) :?>
+			          		<?php elseif ( is_singular('post') ) : ?>
+			          			<h2>Blog</h2>
+								<p>Get the latest updates and news</p>
+			          		<?php elseif ( is_singular('project') ) : ?>
+			          			<h1 class='page-title-project'><?php the_title(); ?></h1>
+		          			<?php elseif ( is_page() ) : ?>
 	          				<?php
 	          					if (have_posts()) : while (have_posts()) : the_post();
 									the_content();

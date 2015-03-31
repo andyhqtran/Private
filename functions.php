@@ -50,12 +50,12 @@ add_action( 'after_setup_theme', 'gently_setup' );
 function gently_widgets_init() {
     register_sidebar( array(
         'name'          => __( 'Sidebar', 'gently' ),
-        'id'            => 'sidebar-1',
+        'id'            => 'main-sidebar',
         'description'   => '',
-        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</aside>',
-        'before_title'  => '<h1 class="widget-title">',
-        'after_title'   => '</h1>',
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
     ) );
 }
 add_action( 'widgets_init', 'gently_widgets_init' );
@@ -72,6 +72,7 @@ function gently_scripts() {
 
     wp_enqueue_script( 'bootstrap_js', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '3.3.2', true);
     wp_enqueue_script( 'scrollReveal_js', get_template_directory_uri() . '/js/scrollReveal.min.js', array('jquery'), '2.1.0', true);
+    wp_enqueue_script( 'evenZoom_js', get_template_directory_uri() . '/js/evenZoom.js', array('jquery'), '1.0.0', true);
     wp_enqueue_script( 'script_js', get_template_directory_uri() . '/js/script.js', array('jquery', 'bootstrap_js'), '0.1', true);
 
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

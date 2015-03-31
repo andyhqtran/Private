@@ -14,6 +14,11 @@ jQuery(document).ready(function($) {
         }
     });
 
+    // evenZoom
+    $(".zoom-class").evenZoom({
+        lensPinningDistance: 20
+    });
+
     // Type Kit Fonts
     (function(d) {
         var config = {
