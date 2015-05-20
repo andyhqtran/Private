@@ -856,6 +856,10 @@ a:hover {
   color: #a4acb4;
   font-weight: 600;
 }
+.module.post-module .post-meta label,
+.module.module.single-module .post-meta label {
+  display: none;
+}
 .module.post-module .post-content,
 .module.module.single-module .post-content {
   color: #a3abb3;
@@ -1072,7 +1076,6 @@ a:hover {
 [data-sr] {
   visibility: hidden;
 }
-
 .zoom {
     display: inline-block;
 }

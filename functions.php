@@ -1,15 +1,7 @@
 <?php
-/**
- * Gently functions and definitions
- *
- * @package Gently
- */
 
-/**
- * Set the content width based on the theme's design and stylesheet.
- */
 if ( ! isset( $content_width ) ) {
-    $content_width = 640; /* pixels */
+    $content_width = 640;
 }
 
 if ( ! function_exists( 'gently_setup' ) ) :
@@ -22,9 +14,6 @@ function gently_setup() {
 
     add_theme_support( 'title-tag' );
 
-    /*
-     * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
-     */
     add_theme_support( 'post-thumbnails' );
 
     register_nav_menus( array(
@@ -44,7 +33,7 @@ function gently_setup() {
         'default-image' => '',
     ) ) );
 }
-endif; // gently_setup
+endif;
 add_action( 'after_setup_theme', 'gently_setup' );
 
 function gently_widgets_init() {
@@ -60,9 +49,6 @@ function gently_widgets_init() {
 }
 add_action( 'widgets_init', 'gently_widgets_init' );
 
-/**
- * Enqueue scripts and styles.
- */
 function gently_scripts() {
     wp_enqueue_style( 'bootstrap_css', get_template_directory_uri() . '/css/bootstrap.min.css');
     wp_enqueue_style( 'reset_css', get_template_directory_uri() . '/css/reset.css');
@@ -80,8 +66,6 @@ function gently_scripts() {
     }
 }
 add_action( 'wp_enqueue_scripts', 'gently_scripts' );
-
-add_theme_support( 'post-thumbnails' );
 
 function gently_add_to_author_contact( $contactmethods ) {
 
@@ -101,28 +85,8 @@ function gently_add_to_author_contact( $contactmethods ) {
 add_filter( 'user_contactmethods', 'gently_add_to_author_contact', 10, 1);
 
 require get_template_directory() . '/inc/cpanel.php';
-/**
- * Implement the Custom Header feature.
- */
-//require get_template_directory() . '/inc/custom-header.php';
-
-/**
- * Custom template tags for this theme.
- */
 require get_template_directory() . '/inc/template-tags.php';
-
-/**
- * Custom functions that act independently of the theme templates.
- */
 require get_template_directory() . '/inc/extras.php';
-
-/**
- * Customizer additions.
- */
 require get_template_directory() . '/inc/customizer.php';
-
-/**
- * Load Jetpack compatibility file.
- */
 require get_template_directory() . '/inc/jetpack.php';
 require get_template_directory() . '/inc/portfolio.php';

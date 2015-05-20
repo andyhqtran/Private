@@ -28,16 +28,15 @@ get_header(); ?>
 	            <a href='<?php the_permalink(); ?>'><?php the_title(); ?></a>
 	        </h2>
 	        <div class='post-meta'>
-	          	by <a href='<?php the_author_url(); ?>'><?php the_author(); ?></a> | <?php the_category(', '); ?>
+	          	by <a href='<?php the_author_url(); ?>'><?php the_author(); ?></a> |  <?php the_taxonomies(array( 'template' => '<span class="label">%s</span> %l.' )); ?>
 	        </div>
 	        <div class='post-content'>
 	        	<?php the_content(); ?>
 	        </div>
-
-			<?php the_post_navigation(); ?>
         	<a class='btn btn-primary pull-left' href='<?php the_permalink(); ?>'><i class='fa fa-arrow-left'></i> Prev</a>
         	<a class='btn btn-primary' href='<?php the_permalink(); ?>'>Next <i class='fa fa-arrow-right'></i></a>
 		</div>
+			<?php the_post_navigation(); ?>
 
 			<?php
 				// If comments are open or we have at least one comment, load up the comment template
